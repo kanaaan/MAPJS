@@ -1,0 +1,10 @@
+{
+  "name": "mapjs",
+  "version": "0.0.0",
+  "description": "mapjs",
+  "main": "app.js",
+  "author": {
+    "name": "kanaaan",
+    "email": ""
+  }
+}
