@@ -6,5 +6,11 @@
   "author": {
     "name": "kanaaan",
     "email": ""
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "jsdom": "^7.2.2",
+    "leaflet": "^0.7.7"
   }
 }
