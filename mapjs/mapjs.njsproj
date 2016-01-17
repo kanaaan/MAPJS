@@ -6,6 +6,8 @@
     <Name>mapjs</Name>
     <RootNamespace>mapjs</RootNamespace>
     <DebuggerPort>1337</DebuggerPort>
+    <LaunchUrl>
+    </LaunchUrl>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -34,6 +36,9 @@
     <Compile Include="app.js" />
     <Compile Include="js\leaflet-server.js" />
     <Content Include="package.json" />
+    <Content Include="views\earth.css" />
+    <Content Include="views\earth.html" />
+    <Content Include="views\main.jade" />
     <Content Include="views\map.jade" />
   </ItemGroup>
   <ItemGroup>

@@ -15,11 +15,11 @@ if (!GLOBAL.L) {
     //GLOBAL.Image = require('./src/image.js');
     
     GLOBAL.L_DISABLE_3D = true;
-    
+
     var leafletPath = require.resolve('leaflet');
     var L = require(leafletPath);
     GLOBAL.L = L;
-    
+
     var scriptLength = leafletPath.split('/').slice(-1)[0].length;
     L.Icon.Default.imagePath = leafletPath.substring(0, leafletPath.length - scriptLength) + 'images';
     
@@ -41,7 +41,7 @@ if (!GLOBAL.L) {
             });
             return originalMap.prototype.initialize.call(this, id, options);
         },
-        
+
         saveImage: function (outfilename, callback) {
             var leafletImage = require('leaflet-image');
             var fs = require('fs');
@@ -52,11 +52,11 @@ if (!GLOBAL.L) {
                 }
                 var out = fs.createWriteStream(outfilename);
                 var stream = canvas.pngStream();
-                
+
                 stream.on('data', function (chunk) {
                     out.write(chunk);
                 });
-                
+
                 stream.on('end', function () {
                     if (callback) {
                         callback(outfilename);
