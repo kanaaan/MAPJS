@@ -1,5 +1,4 @@
-﻿
-/*
+﻿/*
  * leaflet on the server side
  * var map = L.map(document.createElement('div')).setView([52, 4], 10);
  * https://github.com/jieter/leaflet-headless
@@ -26,6 +25,17 @@ app.get('/', function (req, res) {
     res.setHeader('Content-Type', 'text/plain');
     res.end('Node.js server loaded');
 });
+
+/* Send leaflet javascrîpt and css from the server side to the client side, 
+ * instead of downloading them it from internet
+ * */
+app.get('/leaflet.js', function (req, res) {
+    res.sendFile(path.join(__dirname +'/node_modules/leaflet/dist/leaflet.js'));
+});
+app.get('/leaflet.css', function (req, res) {
+    res.sendFile(path.join(__dirname + '/node_modules/leaflet/dist/leaflet.css'));
+});
+
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
