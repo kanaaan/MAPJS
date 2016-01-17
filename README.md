@@ -1,2 +1,5 @@
 # MAPJS
-Test NodeJS with Leaflet and more
+Test NodeJS with the following
+  Leaflet
+  html and Jade pages
+  WinJs
