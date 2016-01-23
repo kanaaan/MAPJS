@@ -22,7 +22,8 @@ app.get('/map', function (req, res) {
 });
 
 app.get('/', function (req, res) {
-    res.render('main', { title: 'Test WinJS inside Nodejs' });
+    //res.render('main', { title: 'Test WinJS inside Nodejs' });
+    res.sendFile(path.join(__dirname + '/views/index/index.html'));
 });
 
 /* 
@@ -48,6 +49,18 @@ app.get('/ui.js', function (req, res) {
 app.get('/ui-dark.css', function (req, res) {
     res.sendFile(path.join(__dirname + '/node_modules/winjs/css/ui-dark.css'));
 });
+/* 
+ * Send index javascrîpt and css from the server side to the client side, 
+ * instead of downloading them it from internet
+ * */
+app.get('/index/index.js', function (req, res) {
+    res.sendFile(path.join(__dirname + '/views/index/index.js'));
+});
+app.get('/index/index.css', function (req, res) {
+    res.sendFile(path.join(__dirname + '/views/index/index.css'));
+});
+
+
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));

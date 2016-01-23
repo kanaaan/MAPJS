@@ -35,15 +35,19 @@
   <ItemGroup>
     <Compile Include="app.js" />
     <Compile Include="js\leaflet-server.js" />
+    <Compile Include="views\index\index.js" />
     <Content Include="package.json" />
     <Content Include="views\earth.css" />
     <Content Include="views\earth.html" />
+    <Content Include="views\index\index.css" />
+    <Content Include="views\index\index.html" />
     <Content Include="views\main.jade" />
     <Content Include="views\map.jade" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="js\" />
     <Folder Include="views\" />
+    <Folder Include="views\index\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
