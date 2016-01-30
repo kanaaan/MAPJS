@@ -2,20 +2,53 @@
     "use strict";
     
     var app = WinJS.Application;
-    
+   
+  
     //SPLIT VIEW
     
     var mySplitView = window.mySplitView = {
         splitView: null,
+
         trailClicked: WinJS.UI.eventHandler(function (ev) {
             var trailId = ev.currentTarget.dataset.trailId;
             updateUI(allTrails[trailId]);
         }),
+
         homeClicked: WinJS.UI.eventHandler(function (ev) {
             //add remove tags
             document.getElementById("app").classList.add("show-home");
             document.getElementById("app").classList.remove("show-trail");
-        }),    
+        }),
+        
+
+        LeafletMapClicked: WinJS.UI.eventHandler(function (ev) {
+            //href
+            window.location.href = "map";
+        }), 
+        
+        LeafletMapEmbeddedClicked: WinJS.UI.eventHandler(function (ev) {
+            //Leaflet map
+            var descriptionElt = document.body.querySelector(".win-h2-Home");
+            descriptionElt.textContent = "Leaflet test Map";
+            var map = L.map('map').setView([51.505, -0.09], 13);
+            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
+                maxZoom: 18,
+                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+                id: 'mapbox.streets'
+            }).addTo(map);
+        }),
+
+        crossfilterClicked: WinJS.UI.eventHandler(function (ev) {
+            //href
+            window.location.href = "http://square.github.io/crossfilter/";
+        }),
+
+        GraphtestClicked: WinJS.UI.eventHandler(function (ev) {
+            //href
+            window.location.href = "http://square.github.io/crossfilter/";
+        }),
     };
     
     

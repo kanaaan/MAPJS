@@ -26,6 +26,17 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/views/index/index.html'));
 });
 
+/*
+ * Test Socket.io for realtime interactio with the webage*/
+var io = require('socket.io').listen(80);
+
+io.sockets.on('connection', function (socket) {
+    socket.emit('news', { hello: 'world' });
+    socket.on('my other event', function (data) {
+        console.log(data);
+    });
+});
+
 /* 
  * Send leaflet javascrîpt and css from the server side to the client side, 
  * instead of downloading them it from internet
