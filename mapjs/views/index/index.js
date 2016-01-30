@@ -46,8 +46,7 @@
         }),
 
         GraphtestClicked: WinJS.UI.eventHandler(function (ev) {
-            //href
-            window.location.href = "http://square.github.io/crossfilter/";
+            window.location.href = "http://www.highcharts.com/demo/3d-column-interactive";
         }),
     };
     
