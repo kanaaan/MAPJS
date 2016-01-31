@@ -27,6 +27,9 @@
         }), 
         
         LeafletMapEmbeddedClicked: WinJS.UI.eventHandler(function (ev) {
+            // hide the map
+            document.getElementById("map").style.display = 'block';
+            document.getElementById("container").style.display = 'none';
             //Leaflet map
             var descriptionElt = document.body.querySelector(".win-h2-Home");
             descriptionElt.textContent = "Leaflet test Map";
@@ -47,6 +50,9 @@
 
         GraphtestClicked: WinJS.UI.eventHandler(function (ev) {
             //window.location.href = "http://www.highcharts.com/demo/3d-column-interactive";
+            // hide the map
+            document.getElementById("map").style.display = 'none';
+            document.getElementById("container").style.display = 'block';
             $('#container').highcharts({
                 title: {
                     text: 'Monthly Average Temperature',
@@ -127,22 +133,13 @@
     
     var allTrails = [
         {
-            title: "Snoqualmie Falls Trail", averageRating: 2, location: "Kirkland, WA", preview: "/images/SampleApp/Snoqualmie.jpg", pictureArray: [
-                { type: "item", picture: "/images/SampleApp/Snoqualmie.jpg" },
-                { type: "item", picture: "/images/SampleApp/Snoqualmie2.jpg" }
-            ], description: "Snoqualmie Falls is one of Washington state's most popular scenic attractions. More than 1.5 million visitors come to the Falls every year. At the falls, you will find a two-acre park, gift shop, observation deck, the Salish Lodge and the famous 270 foot waterfall."
+            title: "Test Trail 1", averageRating: 2, location: "Kirkland, WA", description: "waterfall."
         },
         {
-            title: "Foster Island Trail", averageRating: 4.5, location: "Bellevue, WA", preview: "/images/SampleApp/Foster.jpg", pictureArray: [
-                { type: "item", picture: "/images/SampleApp/Foster.jpg" },
-                { type: "item", picture: "/images/SampleApp/Foster2.jpg" }
-            ], description: "Foster Island Trail is a 2 mile loop trail located near Seattle, Washington that features a lake and is good for all skill levels. The trail offers a number of activity options and is accessible year-round."
+            title: "Test Trail 2", averageRating: 4.5, location: "Bellevue, WA", description: "Foster Island ."
         },
         {
-            title: "Alki Trail", averageRating: 1.5, location: "Seattle, WA", preview: "/images/SampleApp/Alki.jpg", pictureArray: [
-                { type: "item", picture: "/images/SampleApp/Alki.jpg" },
-                { type: "item", picture: "/images/SampleApp/Alki2.jpg" }
-            ], description: "The Alki Trail rides along the northern and eastern shore of West Seattle along Alki Avenue. Largely riding on a widened sidewalk, separated from traffic by a parking lane and curb, traffic on the trail is separated for bikes and walkers, providing a less stressful experience for walkers and bikers alike. "
+            title: "Test Trail 3", averageRating: 1.5, location: "Seattle, WA", description: "Trail rides"
         }
     ]
     
